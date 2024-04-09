@@ -128,7 +128,7 @@ export function Form({ redirect_to }: { redirect_to: string }) {
             className="w-full px-4 py-3 align-top xl:w-32 xl:mr-3"
             type="submit"
           >
-            Entrar
+            {isLoading ? "Entrando..." : "Entrar"}
           </Button>
         </div>
       </div>
