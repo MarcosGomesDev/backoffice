@@ -72,6 +72,26 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        // Side & simple menu
+        "intro-divider": {
+          "100%": {
+            opacity: "1",
+          },
+        },
+        "intro-menu": {
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px)",
+          },
+        },
+
+        // Top menu
+        "intro-top-menu": {
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
