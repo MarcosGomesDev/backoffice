@@ -19,7 +19,7 @@ export function FloatingLabelInputPassword({
   return (
     <div
       className={twMerge([
-        "flex outline-none rounded-md border border-input mt-5 focus-within:border-slate-600 min-w-[350px]",
+        "flex outline-none rounded-md dark:bg-background border border-input dark:border-slate-600 mt-5 focus-within:border-slate-600 dark:focus-within:border-slate-300 min-w-[350px]",
         error ? "border-red-500 focus-within:border-red-500 " : "",
       ])}
     >
@@ -43,7 +43,7 @@ export function FloatingLabelInputPassword({
           <>
             <EyeOff
               className={twMerge([
-                "size-5 text-muted-foreground dark:text-slate-500",
+                "size-5 text-muted-foreground dark:text-slate-400 hover:opacity-80",
                 error ? "text-red-500" : "",
               ])}
             />
@@ -52,7 +52,7 @@ export function FloatingLabelInputPassword({
           <>
             <EyeIcon
               className={twMerge([
-                "size-5 text-muted-foreground dark:text-slate-500",
+                "size-5 text-muted-foreground dark:text-slate-400 hover:opacity-80",
                 error ? "text-red-500" : "",
               ])}
             />

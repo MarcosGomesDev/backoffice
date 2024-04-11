@@ -92,7 +92,7 @@ export function Form({ redirect_to }: { redirect_to: string }) {
             {errors.password?.message ?? ""}
           </div>
         </div>
-        <div className="flex mt-4 text-xs intro-x text-slate-600 dark:text-slate-500 sm:text-sm">
+        <div className="flex mt-4 text-xs intro-x text-slate-600 dark:text-slate-400 sm:text-sm">
           <a href="">Esqueceu sua senha?</a>
         </div>
         <div className="mt-5 text-center intro-x xl:mt-8 xl:text-left">

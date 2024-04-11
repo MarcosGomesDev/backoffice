@@ -60,12 +60,8 @@ export function Menu({ children }: { children: React.ReactNode }) {
       <div className="flex mt-[4.7rem] md:mt-0">
         <nav className="pr-5 pb-16 overflow-x-hidden hidden md:block w-[85px] xl:w-[230px]">
           <Link href="/" className="flex items-center pt-4 pl-5 intro-x">
-            <Image
-              src={darkMode ? "/logo.svg" : "/logo-blue.svg"}
-              alt="logo"
-              width={40}
-              height={40}
-            />
+            <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
+
             <span className="hidden ml-2 text-lg text-slate-700 dark:text-white xl:flex">
               BackOfficeX
             </span>
