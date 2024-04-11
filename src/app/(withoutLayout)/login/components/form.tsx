@@ -6,10 +6,10 @@ import { FloatingLabelInputPassword } from "@/components/ui/float-input-password
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { loginAction } from "@/server-actions/auth.action";
-import { LoginForm, loginSchema } from "@/utils/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { LoginForm, loginSchema } from "./formSchema";
 
 export function Form({ redirect_to }: { redirect_to: string }) {
   const { toast } = useToast();

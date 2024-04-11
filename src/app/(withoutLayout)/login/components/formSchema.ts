@@ -15,10 +15,14 @@ export const loginSchema = z.object({
     .email({
       message: "Email inválido",
     }),
-  password: z.string({ required_error: "Senha é obrigatória" }).min(1, {
-    message: "Senha é obrigatória",
-  }),
-  redirect_to: z.string().default("/home"),
+  password: z
+    .string({
+      required_error: "Senha é obrigatória",
+    })
+    .min(1, {
+      message: "Senha é obrigatória",
+    }),
+  redirect_to: z.string().default("/"),
 });
 
 export type LoginSchema = z.infer<typeof loginSchema>;

@@ -1,6 +1,6 @@
 "use server";
 
-import { LoginForm } from "@/utils/types";
+import { LoginForm } from "@/app/(withoutLayout)/login/components/formSchema";
 import { redirect } from "next/navigation";
 import { AuthService } from "../services/auth.service";
 
