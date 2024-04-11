@@ -2,8 +2,8 @@ import { AuthService } from "@/services/auth.service";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { twMerge } from "tailwind-merge";
-import illustrationUrl from "../../../public/illustration.svg";
-import logoUrl from "../../../public/logo.svg";
+import illustrationUrl from "../../../../public/illustration.svg";
+import logoUrl from "../../../../public/logo.svg";
 import { Form } from "./components/form";
 
 async function Login({
@@ -11,7 +11,7 @@ async function Login({
 }: {
   searchParams: { redirect_to?: string };
 }) {
-  const { redirect_to = "/home" } = searchParams;
+  const { redirect_to = "/" } = searchParams;
 
   const authService = new AuthService();
   const user = authService.getUser();
