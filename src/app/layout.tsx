@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "next-themes";
+import StoreProvider from "./contexts/provider";
 
-const fontSans = FontSans({
+const roboto = Roboto({
+  weight: [
+    "100", // Thin
+    "300", // Light
+    "400", // Regular
+    "500", // Medium
+    "700", // Bold
+    "900", // Black
+  ],
   subsets: ["latin"],
-  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -25,11 +34,13 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "min-h-screen font-sans antialiased px-8",
+          roboto.className
         )}
       >
-        {children}
+        <ThemeProvider attribute="class" enableSystem>
+          <StoreProvider>{children}</StoreProvider>
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>
