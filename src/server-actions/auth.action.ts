@@ -17,7 +17,7 @@ export async function loginAction(form: LoginForm) {
     };
   }
 
-  redirect(redirect_to || "/home");
+  redirect(redirect_to || "/");
 }
 
 export async function logoutAction() {
