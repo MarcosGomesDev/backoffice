@@ -4,14 +4,13 @@ import { useAppSelector } from "@/stores/hooks";
 import { selectSideMenu } from "@/stores/sideMenuSlice";
 import clsx from "clsx";
 import * as lucideIcons from "lucide-react";
-import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Transition } from "react-transition-group";
 import DarkModeSwitcher from "../DarkModeSwitcher";
 import { Separator } from "../ui/separator";
+import { LogoIcon } from "./components/logo";
 import { MenuItem } from "./components/menu-item";
 import { enter, leave, nestedMenu } from "./side-menu";
 
@@ -36,10 +35,6 @@ interface FormattedMenu extends Menu {
 export function Menu({ children }: { children: React.ReactNode }) {
   const location = usePathname();
 
-  const { theme, setTheme } = useTheme();
-
-  const darkMode = theme === "dark";
-
   const [formattedMenu, setFormattedMenu] = useState<
     Array<FormattedMenu | "divider">
   >([]);
@@ -60,8 +55,7 @@ export function Menu({ children }: { children: React.ReactNode }) {
       <div className="flex mt-[4.7rem] md:mt-0">
         <nav className="pr-5 pb-16 overflow-x-hidden hidden md:block w-[85px] xl:w-[230px]">
           <Link href="/" className="flex items-center pt-4 pl-5 intro-x">
-            <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
-
+            <LogoIcon className="size-11" />
             <span className="hidden ml-2 text-lg text-slate-700 dark:text-white xl:flex">
               BackOfficeX
             </span>
