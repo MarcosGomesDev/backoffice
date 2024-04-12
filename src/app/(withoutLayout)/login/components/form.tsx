@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { loginAction } from "@/server-actions/auth.action";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { LoginForm, loginSchema } from "./formSchema";
@@ -55,15 +56,15 @@ export function Form({ redirect_to }: { redirect_to: string }) {
 
   return (
     <form
-      className="flex h-screen py-5 my-10 xl:h-auto xl:py-0 xl:my-0"
+      className="flex h-screen mx-auto my-auto xl:h-auto xl:py-0 xl:my-0"
       onSubmit={handleSubmit(clientAction)}
     >
-      <div className="w-full px-5 py-8 mx-auto my-auto bg-white rounded-md shadow-md xl:ml-20 dark:bg-darkmode-600 xl:bg-transparent sm:px-8 xl:p-0 xl:shadow-none sm:w-3/4 lg:w-2/4 xl:w-auto">
+      <div className="w-full px-5 py-8 mx-auto my-auto bg-white rounded-md shadow-md xl:ml-20 dark:bg-background xl:bg-transparent sm:px-8 xl:p-0 xl:shadow-none sm:w-3/4 lg:w-2/4 xl:w-auto">
         <h2 className="text-2xl font-bold text-center intro-x xl:text-3xl xl:text-left">
           Login
         </h2>
         <div className="mt-2 text-center intro-x text-slate-400 xl:hidden">
-          Apenas alguns clicks para gerenciar sua loja.
+          Apenas alguns click&apos;s para gerenciar sua loja.
         </div>
         <div className="mt-8 intro-x">
           <Input
@@ -93,7 +94,9 @@ export function Form({ redirect_to }: { redirect_to: string }) {
           </div>
         </div>
         <div className="flex mt-4 text-xs intro-x text-slate-600 dark:text-slate-400 sm:text-sm">
-          <a href="">Esqueceu sua senha?</a>
+          <Link href="" className="hover:underline">
+            Esqueceu sua senha?
+          </Link>
         </div>
         <div className="mt-5 text-center intro-x xl:mt-8 xl:text-left">
           <Button

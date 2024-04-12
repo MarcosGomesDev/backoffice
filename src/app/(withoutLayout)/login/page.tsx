@@ -24,15 +24,15 @@ async function Login({
     <>
       <div
         className={twMerge([
-          "w-full -m-3 sm:-mx-8 p-3 sm:px-8 relative h-full lg:overflow-hidden bg-primary xl:bg-white dark:bg-background",
+          "w-full -m-3 sm:-mx-8 p-3 sm:px-8 relative h-full lg:overflow-hidden bg-primary xl:bg-white dark:!bg-slate-700 md:dark:!bg-background",
           "before:hidden before:xl:block before:content-[''] before:w-[57%] before:-mt-[28%] before:-mb-[16%] before:-ml-[13%] before:absolute before:inset-y-0 before:left-0 before:transform before:rotate-[-4.5deg] before:bg-primary/20 before:rounded-[100%] before:dark:bg-slate-400",
           "after:hidden after:xl:block after:content-[''] after:w-[57%] after:-mt-[20%] after:-mb-[13%] after:-ml-[13%] after:absolute after:inset-y-0 after:left-0 after:transform after:rotate-[-4.5deg] after:bg-primary after:rounded-[100%] after:dark:bg-slate-700",
         ])}
       >
         {/* <DarkModeSwitcher />
         <MainColorSwitcher /> */}
-        <div className="container relative z-10 sm:px-10">
-          <div className="block grid-cols-2 gap-4 xl:grid">
+        <div className="container relative z-10 md:px-10">
+          <div className="block -mr-5 md:mr-0 md:grid-cols-2 gap-4 xl:grid">
             {/* BEGIN: Login Info */}
             <div className="flex-col hidden min-h-screen xl:flex">
               <a href="" className="flex items-center pt-5 -intro-x">
@@ -50,7 +50,7 @@ async function Login({
                   src={illustrationUrl}
                 />
                 <div className="mt-10 text-4xl font-medium leading-tight text-white -intro-x">
-                  Apenas alguns clicks para <br />
+                  Apenas alguns click&apos;s para <br />
                   gerenciar sua loja.
                 </div>
                 <div className="mt-5 text-lg text-white -intro-x text-opacity-70 dark:text-slate-400 w-9/12">

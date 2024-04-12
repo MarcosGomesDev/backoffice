@@ -19,7 +19,7 @@ export function FloatingLabelInputPassword({
   return (
     <div
       className={twMerge([
-        "flex outline-none rounded-md dark:bg-background border border-input dark:border-slate-600 mt-5 focus-within:border-slate-600 dark:focus-within:border-slate-300 min-w-[350px]",
+        "flex outline-none rounded-md dark:bg-background border border-input dark:border-slate-600 mt-5 focus-within:border-slate-600 dark:focus-within:border-slate-300",
         error ? "border-red-500 focus-within:border-red-500 " : "",
       ])}
     >
@@ -27,7 +27,7 @@ export function FloatingLabelInputPassword({
         error={error}
         type={showPassword ? "text" : "password"}
         className={twMerge([
-          "!flex-1 border-0 focus-visible:!ring-0 focus:!ring-0 !ring-0 !ring-offset-0 w-full !pr-0 min-w-[305px]",
+          "!flex-1 border-0 focus-visible:!ring-0 focus:!ring-0 !ring-0 !ring-offset-0 w-full !pr-0 md:min-w-[305px]",
         ])}
         {...register}
         {...props}
