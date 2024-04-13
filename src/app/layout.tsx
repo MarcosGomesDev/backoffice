@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={cn(
-          "min-h-screen font-sans antialiased px-8",
+          "min-h-screen font-sans antialiased bg-background",
           roboto.className
         )}
       >
