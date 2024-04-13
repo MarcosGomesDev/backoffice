@@ -94,7 +94,7 @@ export function Form({ redirect_to }: { redirect_to: string }) {
           </div>
         </div>
         <div className="flex mt-4 text-xs intro-x text-slate-600 dark:text-slate-400 sm:text-sm">
-          <Link href="" className="hover:underline">
+          <Link href="#" className="hover:underline">
             Esqueceu sua senha?
           </Link>
         </div>
