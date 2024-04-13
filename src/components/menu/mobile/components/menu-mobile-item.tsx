@@ -1,18 +1,17 @@
-"use client";
-
 import { Icon } from "@/components/Icon";
 import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
-import { FormattedMenu, linkTo } from "../side-menu";
+import { FormattedMenu, linkTo } from "../../side-menu";
 
-export function MenuItem({
+export function MenuMobileItem({
   formattedMenuState,
   level,
   menu,
   className,
+  setActiveMobileMenu,
 }: {
   className?: string;
   menu: FormattedMenu;
@@ -21,10 +20,10 @@ export function MenuItem({
     Dispatch<SetStateAction<(FormattedMenu | "divider")[]>>
   ];
   level: "first" | "second" | "third";
+  setActiveMobileMenu: (value: boolean) => void;
 }) {
-  const [formattedMenu, setFormattedMenu] = formattedMenuState;
-
   const router = useRouter();
+  const [formattedMenu, setFormattedMenu] = formattedMenuState;
 
   return (
     <Link
@@ -42,8 +41,6 @@ export function MenuItem({
             menu.active && level == "first",
           "after:content-[''] after:w-[30px] after:h-[30px] after:mt-[50px] after:scale-[1.04] after:bg-[length:100%] after:bg-menu-corner after:absolute after:top-0 after:right-0 after:-mr-5 dark:after:bg-menu-corner-dark":
             menu.active && level == "first",
-          "[&>div:nth-child(1)]:hover:before:bg-slate-200 [&>div:nth-child(1)]:hover:before:dark:bg-slate-700":
-            !menu.active && !menu.activeDropdown && level == "first",
         },
         className,
       ])}
@@ -71,6 +68,10 @@ export function MenuItem({
         }
 
         setFormattedMenu([...newFormattedMenu]);
+
+        if (menu.pathname) {
+          setActiveMobileMenu(false);
+        }
       }}
     >
       <div
@@ -89,7 +90,7 @@ export function MenuItem({
       </div>
       <div
         className={clsx([
-          "hidden xl:flex items-center w-full ml-3",
+          "flex items-center w-full ml-3",
           { "font-medium": menu.active && level != "first" },
           {
             "!text-slate-800 font-medium dark:!text-slate-100":
@@ -104,7 +105,7 @@ export function MenuItem({
         {menu.subMenu && (
           <div
             className={clsx([
-              "transition ease-in duration-100 ml-auto mr-5 hidden xl:block",
+              "transition ease-in duration-100 ml-auto mr-5 block",
               { "transform rotate-180": menu.activeDropdown },
             ])}
           >

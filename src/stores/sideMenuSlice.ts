@@ -76,7 +76,7 @@ const initialState: SideMenuState = {
       subMenu: [
         {
           icon: "Activity",
-          pathname: "/teste",
+          pathname: "/pagina1",
           title: "Categories",
         },
         {
@@ -315,7 +315,7 @@ const initialState: SideMenuState = {
           subMenu: [
             {
               icon: "Zap",
-              pathname: "/pagina1",
+              pathname: "/zap",
               title: "Layout 1",
             },
             {
