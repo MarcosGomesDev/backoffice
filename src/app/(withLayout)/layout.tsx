@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen w-full px-4 md:px-8">
       <Menu>{children}</Menu>
     </div>
   );
