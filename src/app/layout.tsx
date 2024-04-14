@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "next-themes";
 import StoreProvider from "./contexts/provider";
+import Loading from "./loading";
 
 const roboto = Roboto({
   weight: [
@@ -39,7 +40,10 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" enableSystem>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            <Loading />
+            {children}
+          </StoreProvider>
         </ThemeProvider>
         <Toaster />
       </body>
