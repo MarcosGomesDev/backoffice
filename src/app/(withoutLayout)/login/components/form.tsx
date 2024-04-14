@@ -77,6 +77,7 @@ export function Form({ redirect_to }: { redirect_to: string }) {
             id="email"
             label="Email"
             type="email"
+            className="dark:focus-within:border-slate-300"
             error={errors.email}
             {...register("email")}
           />

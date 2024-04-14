@@ -3,7 +3,11 @@ import { useState } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { Button } from "./button";
-import { FloatingLabelInput, FloatingLabelInputProps } from "./float-input";
+import {
+  FloatingInput,
+  FloatingLabel,
+  FloatingLabelInputProps,
+} from "./float-input";
 
 interface FloatingLabelInputPasswordProps extends FloatingLabelInputProps {
   register?: UseFormRegisterReturn;
@@ -19,24 +23,25 @@ export function FloatingLabelInputPassword({
   return (
     <div
       className={twMerge([
-        "flex outline-none rounded-md dark:bg-background border border-input dark:border-slate-600 mt-5 focus-within:border-slate-600 dark:focus-within:border-slate-300",
-        error ? "border-red-500 focus-within:border-red-500 " : "",
+        "flex outline-none rounded-md dark:bg-background border border-input dark:border-slate-600 mt-5 focus-within:border-slate-600 dark:focus-within:border-slate-300 max-w-full w-80 relative",
+        error ? "!border-red-500 focus-within:border-red-500 " : "",
       ])}
     >
-      <FloatingLabelInput
-        error={error}
-        type={showPassword ? "text" : "password"}
-        className={twMerge([
-          "!flex-1 border-0 focus-visible:!ring-0 focus:!ring-0 !ring-0 !ring-offset-0 w-full !pr-0 md:min-w-[305px]",
-        ])}
-        {...register}
-        {...props}
-      />
+      <div className="relative flex-1 pr-9">
+        <FloatingInput
+          className="border-0 focus-visible:!ring-0 focus:!ring-0 !ring-0 !ring-offset-0"
+          type={showPassword ? "text" : "password"}
+          error={error}
+          {...register}
+          {...props}
+        />
+        <FloatingLabel error={error}>{props.label}</FloatingLabel>
+      </div>
 
       <Button
         type="button"
         variant="ghost"
-        className="hover:bg-transparent pl-2"
+        className="hover:bg-transparent absolute right-0"
         onClick={() => setShowPassword(!showPassword)}
       >
         {showPassword ? (
