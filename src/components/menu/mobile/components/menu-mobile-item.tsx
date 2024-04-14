@@ -52,14 +52,14 @@ export function MenuMobileItem({
 
         if (!menu.pathname) {
           newFormattedMenu.map((item) => {
-            if (item === menu) {
-              return {
-                ...item,
-                activeDropdown: true,
-              };
-            }
-
             if (typeof item !== "string") {
+              if (item === menu) {
+                return {
+                  ...item,
+                  activeDropdown: true,
+                };
+              }
+
               item.activeDropdown = false;
             }
 

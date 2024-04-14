@@ -14,7 +14,7 @@ export function MenuMobile() {
     <div className="md:hidden">
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
         <div className="w-full flex items-center justify-between border-b border-slate-300 dark:border-white/10 pb-2">
-          <Image src="/logo.svg" width={48} height={48} alt="logo" />
+          <Image src="/logo.svg" width={48} height={48} alt="logo" priority />
           <SheetTrigger>
             <Menu className="size-8 dark:text-white transform text-slate-800" />
           </SheetTrigger>

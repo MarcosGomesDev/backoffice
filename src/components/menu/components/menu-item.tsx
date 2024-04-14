@@ -28,7 +28,7 @@ export function MenuItem({
 
   return (
     <Link
-      href={menu.subMenu ? {} : menu.pathname}
+      href={menu.subMenu ? "#" : menu.pathname}
       as={menu.subMenu ? "div" : "a"}
       className={clsx([
         "h-[50px] flex items-center pl-5 mb-1 relative rounded-full",
@@ -55,14 +55,14 @@ export function MenuItem({
 
         if (!menu.pathname) {
           newFormattedMenu.map((item) => {
-            if (item === menu) {
-              return {
-                ...item,
-                activeDropdown: true,
-              };
-            }
-
             if (typeof item !== "string") {
+              if (item === menu) {
+                return {
+                  ...item,
+                  activeDropdown: true,
+                };
+              }
+
               item.activeDropdown = false;
             }
 
